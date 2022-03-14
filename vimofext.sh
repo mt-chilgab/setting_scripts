@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pwd_=$pwd
+pwd_=$PWD
 
 echo "Detecting OpenFOAM installation..."
 [ ! -eq 
