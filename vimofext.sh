@@ -2,11 +2,8 @@
 
 pwd_=$PWD
 
-echo "Detecting OpenFOAM installation..."
-[ ! -eq 
-
 echo "Setting OpenFOAM env vars..."
-source /opt/OpenFOAM/OpenFOAM-2.3.1/etc/bashrc WM_NCOMPPROCS=4 WM_MPLIB=SYSTEMOPENMPI
+source /opt/OpenFOAM/OpenFOAM-2.3.1/etc/bashrc $FOAM_SETTINGS
 
 echo "Making FOAM_RUN and extension directory if they don't exist..." 
 [ ! -d "$FOAM_RUN/../OpenFOAM_extensions" ] && mkdir -p $FOAM_RUN/../OpenFOAM_extensions
