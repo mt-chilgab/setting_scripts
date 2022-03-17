@@ -11,7 +11,11 @@ export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0
 export LIBGL_ALWAYS_INDIRECT=1
 
 echo "Adding alias of231 to .bashrc..."
-echo "alias of231=\"chmod a+x $(pwd -P)/setof.sh && source $(pwd -P)/setof.sh\"" >> ~/.bashrc
+if [[ $(cat ~/.bashrc | grep -oP "of231") == "of231" ]]; then
+	echo "Alias exists!"
+else
+	echo "alias of231=\"chmod a+x $(pwd -P)/setof.sh && source $(pwd -P)/setof.sh\"" >> ~/.bashrc
+fi
 
 echo "Setting OpenFOAM env vars..."
 source /opt/OpenFOAM/OpenFOAM-2.3.1/etc/bashrc $FOAM_SETTINGS
