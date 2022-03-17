@@ -30,5 +30,7 @@ cd vimExtensionOpenFOAM
 chmod a+x ./install
 ./install
 
+source ~/.bashrc
+
 echo "Finished"
 cd $pwd_
