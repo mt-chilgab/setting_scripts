@@ -6,6 +6,10 @@ echo "Installing dependencies..."
 sudo apt-get update
 sudo apt-get -y install build-essential cmake flex bison zlib1g-dev qt4-dev-tools libqt4-dev libqtwebkit-dev gnuplot libreadline-dev libncurses5-dev libxt-dev libopenmpi-dev openmpi-bin libboost-system-dev libboost-thread-dev libgmp-dev libmpfr-dev python python-dev libcgal-dev libglu1-mesa-dev libqt4-opengl-dev
 
+echo "Setting DISPLAY variable and setting LIBGL_ALWAYS_INDIRECT to 1"
+export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0
+export LIBGL_ALWAYS_INDIRECT=1
+
 echo "Adding alias of231 to .bashrc..."
 echo "alias of231=\"chmod a+x $(pwd -P)/setof.sh && source $(pwd -P)/setof.sh\"" >> ~/.bashrc
 
